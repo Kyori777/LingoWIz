@@ -1419,24 +1419,31 @@ section,
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
+.team {
+  display: flex;
+  justify-content: center; /* Centers all children horizontally */
+  align-items: center; /* Centers all children vertically */
+  min-height: 100vh; /* Ensures the section takes full height of the viewport */
+  text-align: center; /* Centers all text within the .team-member */
+}
+
 .team .team-member {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); /* Fallback for color-mix */
   border-radius: 5px;
   transition: 0.5s;
   padding: 30px;
-  height: 100%;
-  margin: auto; /* Centers the .team-member block */
-  text-align: center; /* Ensures content inside is centered */
-  display: flex; /* Aligns content horizontally */
-  flex-direction: column; /* Stacks content vertically */
-  align-items: center;
+  display: flex; /* Enables flexbox for the inner content */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Centers items horizontally inside */
+  justify-content: center; /* Centers items vertically inside */
+  max-width: 300px; /* Limits the width */
+  margin: 20px; /* Adds some spacing between team members */
 }
 
 @media (max-width: 468px) {
   .team .team-member {
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center;
-    align-items: center;
+    padding: 20px; /* Adjusts padding for smaller screens */
+    max-width: 90%; /* Makes the member take 90% of the screen width */
   }
 }
 
@@ -1446,7 +1453,7 @@ section,
   height: 150px; /* Ensures a square container */
   border-radius: 50%; /* Makes the image circular */
   flex-shrink: 0;
-  margin: 0 auto; /* Centers the image */
+  margin-bottom: 20px; /* Adds space between image and text */
 }
 
 .team .team-member .pic img {
@@ -1461,8 +1468,7 @@ section,
 }
 
 .team .team-member .member-info {
-  margin-top: 20px;
-  text-align: center; /* Centers text content */
+  text-align: center; /* Ensures text content is centered */
 }
 
 .team .team-member h4 {
@@ -1526,6 +1532,7 @@ section,
 .team .team-member .social a:hover i {
   color: var(--contrast-color);
 }
+
 
 /*--------------------------------------------------------------
 # Pricing Section
